@@ -120,24 +120,19 @@ footer {
   font-family: 'Poppins', sans-serif;
 }
 
-.neon-btn {
-  display: inline-block;
-  margin: 10px;
-  padding: 14px 26px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(145deg, #1e1e2f, #23233c);
-  border: 2px solid #4e4eff;
+button {
+  font-size: 14px;
+  padding: 6px 12px;
   border-radius: 12px;
-  text-decoration: none;
-  box-shadow: 0 0 10px #4e4eff70;
+  margin: 8px;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #444;
   transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
 }
 
-.neon-btn:hover {
-  background: #4e4eff;
-  color: #000;
-  box-shadow: 0 0 20px #4e4effb0;
+button:hover {
+  background-color: #333;
+  transform: scale(1.05);
 }
