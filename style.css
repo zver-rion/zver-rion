@@ -107,3 +107,37 @@ footer {
   font-size: 0.9rem;
   color: #aaa;
 }
+/* === FEATURE BUTTONS === */
+.feature-buttons {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.feature-buttons h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.neon-btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 14px 26px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(145deg, #1e1e2f, #23233c);
+  border: 2px solid #4e4eff;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #4e4eff70;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.neon-btn:hover {
+  background: #4e4eff;
+  color: #000;
+  box-shadow: 0 0 20px #4e4effb0;
+}
