@@ -1,136 +1,35 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Import cute Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500&display=swap');
 
-body {
-  font-family: 'Orbitron', sans-serif;
-  background-color: #0d0d0d;
-  color: #f0f0f0;
-  line-height: 1.6;
-}
-
-.hero-section {
-  background-image: url('https://images6.alphacoders.com/134/1343335.jpeg');
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  position: relative;
-}
-
-.overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  height: 100%;
-  padding: 60px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.name {
-  font-size: 4rem;
-  font-family: 'Press Start 2P', cursive;
-  color: #00fff7;
-  text-shadow: 0 0 15px #00fff7;
-}
-
-.tagline {
-  font-size: 1.2rem;
-  margin: 15px 0;
-  color: #f9f9f9;
-}
-
-.socials {
-  margin: 20px 0;
-}
-
-.socials a {
-  color: #ff006a;
-  text-decoration: none;
-  font-weight: bold;
-  margin: 0 15px;
-  padding: 10px 20px;
-  border: 2px solid #ff006a;
-  border-radius: 10px;
-  transition: 0.3s ease;
-}
-
-.socials a:hover {
-  background-color: #ff006a;
-  color: #fff;
-  box-shadow: 0 0 10px #ff006a;
-}
-
-.location {
-  margin-top: 20px;
-  font-style: italic;
-}
-
-.gallery {
-  padding: 50px 30px;
-  text-align: center;
-  background-color: #111;
-}
-
-.gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #fff;
-}
-
-.images {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.images img {
-  max-width: 300px;
-  height: auto;
-  border-radius: 12px;
-  border: 3px solid #00fff7;
-  box-shadow: 0 0 20px #00fff7;
-  transition: transform 0.4s ease;
-}
-
-.images img:hover {
-  transform: scale(1.08);
-}
-
-footer {
-  background-color: #000;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-/* === FEATURE BUTTONS === */
+/* Button Container */
 .button-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 12px;
-  padding: 20px 10px;
+  padding: 30px 20px;
+  margin-top: 20px;
 }
 
+/* Individual Cute Buttons */
 .menu-button {
-  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
-  font-size: 13.5px;
+  font-family: 'Quicksand', 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
   padding: 8px 16px;
+  background: linear-gradient(145deg, #f9f1ff, #e8e0f8);
+  color: #4a3f77;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(135deg, #1b1b2f, #2a2a44);
-  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
-  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
+/* Hover Effect */
 .menu-button:hover {
-  background: linear-gradient(135deg, #383867, #4a4a88);
-  transform: scale(1.06);
+  background: linear-gradient(145deg, #f0e7ff, #d6c8f5);
+  transform: scale(1.05);
+  color: #3a3160;
 }
