@@ -108,31 +108,29 @@ footer {
   color: #aaa;
 }
 /* === FEATURE BUTTONS === */
-.feature-buttons {
-  text-align: center;
-  margin-top: 60px;
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 10px;
 }
 
-.feature-buttons h2 {
-  font-size: 2rem;
+.menu-button {
+  font-family: 'Poppins', 'Noto Sans JP', sans-serif;
+  font-size: 13.5px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1b1b2f, #2a2a44);
   color: #ffffff;
-  margin-bottom: 30px;
-  font-family: 'Poppins', sans-serif;
-}
-
-button {
-  font-size: 14px;
-  padding: 6px 12px;
-  border-radius: 12px;
-  margin: 8px;
-  background-color: #1c1c1c;
-  color: white;
-  border: 1px solid #444;
+  cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
 }
 
-button:hover {
-  background-color: #333;
-  transform: scale(1.05);
+.menu-button:hover {
+  background: linear-gradient(135deg, #383867, #4a4a88);
+  transform: scale(1.06);
 }
