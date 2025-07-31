@@ -82,4 +82,20 @@ body {
   margin-bottom: 15px;
   color: #fff;
 }
+  .gallery h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #ff4081;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gallery .images h3 {
+  margin-top: 10px;
+  color: #fff;
+}
+
+.gallery .images p {
+  font-size: 14px;
+  color: #ccc;
+}
 
