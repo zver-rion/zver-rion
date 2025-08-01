@@ -98,4 +98,41 @@ body {
   font-size: 14px;
   color: #ccc;
 }
+.hero-title {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: radial-gradient(circle at center, #1e1e30, #0f0f1c);
+}
+
+.main-heading {
+  font-family: 'Orbitron', 'Kanit', 'Poppins', sans-serif;
+  font-size: 3rem;
+  color: #ffccff;
+  text-shadow: 0 0 12px #ff99ff, 0 0 20px #cc66ff;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  animation: neonPulse 3s infinite;
+}
+
+.sub-heading {
+  font-family: 'Kanit', 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: #ccccff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  font-style: italic;
+  opacity: 0.9;
+}
+
+@keyframes neonPulse {
+  0% {
+    text-shadow: 0 0 8px #ff66cc, 0 0 14px #ff66cc;
+  }
+  50% {
+    text-shadow: 0 0 18px #ff99ff, 0 0 28px #ff66cc;
+  }
+  100% {
+    text-shadow: 0 0 8px #ff66cc, 0 0 14px #ff66cc;
+  }
+}
 
