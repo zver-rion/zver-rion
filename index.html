@@ -11,7 +11,7 @@
       margin: 0;
       font-family: 'Sawarabi Mincho', serif;
       min-height: 100vh;
-      background-image: url('image.jpg');
+      background-image: url('image.jpg'); /* uses your uploaded file */
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain; /* Shows full image, no cropping */
@@ -106,11 +106,15 @@
       }
     }
     footer {
-      margin-top: 30px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       text-align: center;
       font-size: 0.98rem;
       color: #b7a8cd;
-      text-shadow: 0 1px 2px #ead1fc88;
+      background: rgba(255,255,255,0.05);
+      padding: 10px 0;
       z-index: 1;
     }
   </style>
@@ -130,7 +134,7 @@
     </button>
     <button onclick="alert('Anime Content coming soon!')">
       <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#320e2f" stroke-width="2" fill="none"/><path d="M7 7l10 10" stroke="#320e2f" stroke-width="2"/></svg>
-      Anime Button
+      Anime
     </button>
     <button onclick="alert('Music Player coming soon!')">
       <svg viewBox="0 0 24 24"><path d="M9 19V6l12-2v13" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
@@ -157,3 +161,4 @@
   <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
 </body>
 </html>
+
