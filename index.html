@@ -1,89 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Kanit:wght@400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Kanit:wght@400&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SANG HYUK | Gaming Universe</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zver-Rion Space - Anime & Gaming Wonderland</title>
+  <meta name="description" content="Step into a magical anime-inspired world with mini games, AI chat, music, fancy text, and more. Your ultimate Japanese vibe entertainment hub!" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Sawarabi Mincho', serif;
+      background: linear-gradient(135deg, #f8e1f4, #f0d9ff);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+    h1 {
+      font-size: 3.5rem;
+      color: #d864a9;
+      text-shadow: 0 3px 8px #e0a8cf;
+      margin-bottom: 5px;
+      letter-spacing: 0.15em;
+    }
+    p.description {
+      font-size: 1.3rem;
+      color: #9b5ca9;
+      margin-bottom: 50px;
+      text-align: center;
+      max-width: 700px;
+      font-weight: 600;
+      text-shadow: 0 1px 3px #ead1fc;
+    }
+    .button-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 900px;
+    }
+    button {
+      background: linear-gradient(145deg, #f6c1e5, #e57ccb);
+      border: 2px solid #e57ccb;
+      border-radius: 24px;
+      padding: 18px 25px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #4b214a;
+      cursor: pointer;
+      box-shadow: 0 6px 15px #fb99d3;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      user-select: none;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Sawarabi Mincho', serif;
+    }
+    button::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: -40%;
+      width: 180%;
+      height: 180%;
+      background: radial-gradient(circle, #ffe3f8 30%, transparent 80%);
+      transform: rotate(45deg);
+      opacity: 0.6;
+      transition: all 0.6s ease;
+      pointer-events: none;
+      border-radius: 50%;
+    }
+    button:hover::before {
+      top: -20%;
+      left: -20%;
+      opacity: 1;
+      transform: rotate(25deg);
+    }
+    button:hover {
+      background: linear-gradient(145deg, #e57ccb, #f6c1e5);
+      box-shadow: 0 10px 35px #f085c7;
+      color: #320e2f;
+      transform: scale(1.1);
+      border-color: #d14ca1;
+      z-index: 1;
+    }
+    button svg {
+      width: 24px;
+      height: 24px;
+      fill: #4b214a;
+      filter: drop-shadow(0 0 2px #fbb1d6);
+      transition: fill 0.3s ease;
+    }
+    button:hover svg {
+      fill: #320e2f;
+      filter: drop-shadow(0 0 4px #e357a3);
+    }
+    /* Sakura petal floating animation */
+    @keyframes floatPetal {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-120px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    .petal {
+      position: fixed;
+      bottom: -20px;
+      background: #f7c0d9;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      opacity: 0.8;
+      box-shadow: 0 0 8px #fbb1d6;
+      animation: floatPetal 7s linear infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
 </head>
-<script>
-  function toggleAnimeInfo() {
-    const info = document.getElementById("animeInfo");
-    info.style.display = info.style.display === "none" ? "block" : "none";
-  }
-</script> 
 <body>
- <div class="hero-title">
-  <h1 class="main-heading">🌌 ZVER'S GALAXY</h1>
-  <h2 class="sub-heading">A DIVINE FICTIONAL REALM YOU WERE WAITING FOR</h2>
-</div>
 
-  <!-- 🌌 FEATURE NAVIGATION SECTION -->
- <div class="button-container">
-    <button class="menu-button">🕹️ Mini Games</button>
-    <button class="menu-button">🤖 ChatBot</button>
-    <button class="menu-button">🎌 Anime World</button>
-    <button class="menu-button">📥 YouTube Downloader</button>
-    <button class="menu-button">📷 Instagram Downloader</button>
-    <button class="menu-button">🎵 Music Player</button>
-    <button class="menu-button">🧠 AI Chat</button>
-    <button class="menu-button">📚 Study Hub</button>
-    <button class="menu-button">🌟 Anime Characters</button>
-  </div>
+  <h1>Zver-Rion Space</h1>
+  <p class="description">Step into a magical anime-inspired world with mini games, AI chat, music, fancy text, and more. Your ultimate Japanese vibe entertainment hub!</p>
 
-  <section class="gallery">
-  <h2>🔥 Anime Characters</h2>
-  
-  <button onclick="toggleAnimeInfo()" style="padding: 10px 20px; font-size: 16px; background-color: #ff4081; color: white; border: none; border-radius: 10px; cursor: pointer;">
-    🌸 Explore Anime
-  </button>
-
-  <div id="animeInfo" style="display: none; margin-top: 20px;">
-    <div class="images" style="display: flex; gap: 20px; flex-wrap: wrap;">
-      <div style="flex: 1;">
-        <img src="https://files.catbox.moe/7c25av.jpg" alt="Anime 1" style="width: 100%; border-radius: 10px;" />
-        <h3>Naruto Uzumaki</h3>
-        <p>A ninja with a dream to become Hokage. Known for his never-give-up attitude and hidden power of the Nine-Tails.</p>
-      </div>
-      <div style="flex: 1;">
-        <img src="https://files.catbox.moe/a5zoka.jpg" alt="Anime 2" style="width: 100%; border-radius: 10px;" />
-        <h3>Gojo Satoru</h3>
-        <p>The strongest jujutsu sorcerer. Famous for his blindfold, Limitless cursed technique, and playful personality.</p>
-      </div>
-      <div style="flex: 1;">
-        <img src="https://files.catbox.moe/kbe34s.jpg" alt="Anime 3" style="width: 100%; border-radius: 10px;" />
-        <h3>Levi Ackerman</h3>
-        <p>Captain of the Survey Corps, known for his deadly skills against Titans and cold, calm demeanor.</p>
-      </div>
-    </div>
-  </div>
-</section> 
-  <!-- Buttons at the bottom -->
-  <div class="anime-buttons" style="margin-top: 20px; text-align: center;">
-    <button onclick="window.location.href='#all-anime'" style="padding: 10px 20px; background-color: #ff4d4d; color: white; border: none; border-radius: 10px; margin-right: 10px; cursor: pointer;">
-      🌟 All Anime
+  <div class="button-container">
+    <button onclick="alert('Mini Games coming soon!')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#320e2f" stroke-width="2"/></svg> Mini Games
     </button>
-    <button onclick="alert('Search feature coming soon!')" style="padding: 10px 20px; background-color: #4d88ff; color: white; border: none; border-radius: 10px; cursor: pointer;">
-      🔍 Search Anime
+    <button onclick="alert('Fancy Text Generator coming soon!')">
+      <svg viewBox="0 0 24 24"><path fill="none" stroke="#320e2f" stroke-width="2" d="M4 12h16"/></svg> Fancy Text Generator
+    </button>
+    <button onclick="alert('Anime Content coming soon!')">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#320e2f" stroke-width="2" fill="none"/><path d="M7 7l10 10" stroke="#320e2f" stroke-width="2"/></svg> Anime Button
+    </button>
+    <button onclick="alert('Music Player coming soon!')">
+      <svg viewBox="0 0 24 24"><path d="M9 19V6l12-2v13" stroke="#320e2f" stroke-width="2" fill="none"/></svg> Music Player
+    </button>
+    <button onclick="alert('Downloader coming soon!')">
+      <svg viewBox="0 0 24 24"><path d="M12 16l4-4h-3V4h-2v8H8l4 4z" stroke="#320e2f" stroke-width="2" fill="none"/></svg> Downloader
+    </button>
+    <button onclick="alert('AI Chat coming soon!')">
+      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" stroke="#320e2f" stroke-width="2" fill="none"/></svg> AI Chat
+    </button>
+    <button onclick="alert('Study Hub coming soon!')">
+      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" stroke="#320e2f" stroke-width="2" fill="none"/></svg> Study Hub
+    </button>
+    <button onclick="alert('Contact Zver Rion coming soon!')">
+      <svg viewBox="0 0 24 24"><path d="M2 3h20v18H2z" stroke="#320e2f" stroke-width="2" fill="none"/></svg> Contact Zver Rion
     </button>
   </div>
-</section>
-      
-</section>
 
-       <div class="socials">
-        <a href="https://wa.me/84914405064" target="_blank">📞 WhatsApp</a>
-        <a href="https://instagram.com/zver_rion" target="_blank">📸 Instagram</a>
-      </div>
-      <p class="location">📍 Osaka, Japan</p>
-    </div>
-  </div>      
+  <!-- Sakura petals animation -->
+  <script>
+    const colors = ['#f7c0d9', '#fcc2d7', '#e8a8d3', '#fab4de'];
+    function createPetal() {
+      const petal = document.createElement('div');
+      petal.classList.add('petal');
+      petal.style.background = colors[Math.floor(Math.random() * colors.length)];
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.width = petal.style.height = 12 + Math.random() * 8 + 'px';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      petal.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(petal);
+      setTimeout(() => petal.remove(), 10000);
+    }
+    setInterval(createPetal, 400);
+  </script>
 
-  <footer>
-    <p>© 2025 SANG HYUK | Designed with ❤️ by Zver Rion</p>
-  </footer>
+  <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
+
 </body>
 </html>
+
