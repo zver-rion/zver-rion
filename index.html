@@ -7,179 +7,196 @@
   <meta name="description" content="THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE !" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
-    
-    /* Background styling with cover */
+
     body {
       margin: 0;
-      font-family: 'Sawarabi Mincho', serif;
       min-height: 100vh;
-      background-image: url('background3;2.jpeg'); /* your image file */
-      background-repeat: no-repeat;
+      font-family: 'Sawarabi Mincho', serif;
+      background-image: url('background3;2.jpeg');
       background-position: center;
-      background-size: cover; /* cover to fill whole screen */
+      background-repeat: no-repeat;
+      background-size: cover;
       background-attachment: fixed;
-      color: #f0e6fa;
+      color: #eff6ff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 20px;
-      overflow-x: hidden;
+      justify-content: flex-start;
+      padding: 0;
       position: relative;
       z-index: 1;
     }
-
-    /* Overlay for readability */
     .overlay {
       position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.25);
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(40,60,110, 0.22);
       pointer-events: none;
       z-index: 0;
     }
-
-    h1 {
-      font-size: 2.7rem;
-      color: #d864a9;
-      text-shadow: 0 3px 8px #e0a8cf;
-      margin-bottom: 5px;
-      letter-spacing: 0.15em;
-      margin-top: 35px;
-      position: relative;
+    .content-wrapper {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 38px 12px 90px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       z-index: 2;
+      position: relative;
     }
-    p.description {
-      font-size: 1.15rem;
-      color: #b49cd2;
-      margin-bottom: 40px;
+    h1 {
+      font-size: 2.6rem;
       text-align: center;
-      max-width: 700px;
-      font-weight: 600;
-      text-shadow: 0 1px 3px #ead1fc;
-      position: relative;
-      z-index: 2;
+      font-weight: bold;
+      margin: 27px 0 5px 0;
+      color: #49b5ff;
+      letter-spacing: 0.12em;
+      text-shadow: 0 4px 33px #2196F388, 0 2px 10px #fff, 0 0px 3px #bae0ff;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.10);
+      display: inline-block;
+      padding: 13px 18px 15px 18px;
+      width: 100%;
+      max-width: 900px;
+      box-shadow: 0 4px 24px #b3e5fcaa;
+    }
+    .description {
+      text-align: center;
+      margin: 0 0 32px 0;
+      font-size: 1.08rem;
+      color: #edf3fa;
+      font-weight: 500;
+      max-width: 510px;
+      background: rgba(34,74,126,0.11);
+      border-radius: 13px;
+      padding: 7px 20px 11px 20px;
+      text-shadow: 0 1px 4px #bae0ff;
+      box-shadow: 0 2px 12px #4fd2ff22;
     }
     .button-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 16px 20px;
       width: 100%;
-      max-width: 900px;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 2;
+      max-width: 640px;
+      margin: 0 auto 40px auto;
+      padding: 0 8px;
     }
     button {
-      background: linear-gradient(145deg, #f6c1e5, #e57ccb);
-      border: 2px solid #e57ccb;
-      border-radius: 24px;
-      padding: 18px 25px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #4b214a;
+      background: linear-gradient(135deg, #4fd2ff 60%, #49b5ff 100%);
+      border: none;
+      border-radius: 16px;
+      padding: 12px 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #174272;
       cursor: pointer;
-      box-shadow: 0 6px 15px #fb99d3;
-      transition: all 0.3s ease;
+      box-shadow: 0 2px 10px #3fd7fff2;
+      transition: all 0.2s cubic-bezier(.6,.6,0,1);
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 7px;
       user-select: none;
-      position: relative;
-      overflow: hidden;
-      font-family: 'Sawarabi Mincho', serif;
+      outline: none;
     }
-    button:hover {
-      background: linear-gradient(145deg, #e57ccb, #f6c1e5);
-      box-shadow: 0 10px 35px #f085c7;
-      color: #320e2f;
-      transform: scale(1.1);
-      border-color: #d14ca1;
-      z-index: 10;
+    button:hover, button:focus {
+      background: linear-gradient(135deg, #277fff 60%, #66e0ff 100%);
+      box-shadow: 0 6px 25px #49b5ff90;
+      color: #09335f;
+      transform: translateY(-2px) scale(1.08);
     }
     button svg {
-      width: 22px;
-      height: 22px;
-      fill: #4b214a;
-      filter: drop-shadow(0 0 2px #fbb1d6);
-      transition: fill 0.3s ease;
+      width: 18px;
+      height: 18px;
+      fill: #1477f8;
+      margin-right: 5px;
+      filter: drop-shadow(0 0 3px #bee4ff);
+      transition: fill 0.18s;
     }
-    button:hover svg {
-      fill: #320e2f;
-      filter: drop-shadow(0 0 4px #e357a3);
+    button:hover svg, button:focus svg {
+      fill: #0059b2;
     }
     @media (max-width: 600px) {
-      body {
-        padding: 20px 6px;
+      .content-wrapper {
+        padding: 13px 2vw 72px 2vw;
       }
       h1 {
-        font-size: 1.5rem;
-        margin-top: 13px;
+        font-size: 1.22rem;
+        padding: 9px 6vw 8px 6vw;
+        margin: 9px 0 4px 0;
       }
       .button-container {
-        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+        max-width: 95vw;
+        padding: 0 2vw;
       }
-      button {
-        font-size: 0.98rem;
-        padding: 15px 5px;
+      .description {
+        font-size: 0.99rem;
+        padding: 5px 6vw 7px 6vw;
       }
     }
     footer {
       position: fixed;
       left: 0;
       bottom: 0;
-      width: 100%;
+      width: 100vw;
       text-align: center;
-      font-size: 0.98rem;
-      color: #b7a8cd;
-      background: rgba(255, 255, 255, 0.05);
+      font-size: 0.97rem;
+      color: #beeeff;
+      background: rgba(40,60,110, 0.15);
       padding: 10px 0;
+      letter-spacing: 0.05em;
       z-index: 2;
+      box-shadow: 0 0px 12px #fff5;
+      font-family: 'Sawarabi Mincho', serif;
+      backdrop-filter: blur(2.5px);
     }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
-
-  <h1>ZVER RION - Anime & Gaming Wonderland</h1>
-  <p class="description">THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE !</p>
-
-  <div class="button-container">
-    <button onclick="alert('Mini Games coming soon!')">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#320e2f" stroke-width="2"/></svg>
-      Mini Games
-    </button>
-    <button onclick="alert('Fancy Text Generator coming soon!')">
-      <svg viewBox="0 0 24 24"><path fill="none" stroke="#320e2f" stroke-width="2" d="M4 12h16"/></svg>
-      Fancy Text Generator
-    </button>
-    <button onclick="alert('Anime Content coming soon!')">
-      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#320e2f" stroke-width="2" fill="none"/><path d="M7 7l10 10" stroke="#320e2f" stroke-width="2"/></svg>
-      Anime
-    </button>
-    <button onclick="alert('Music Player coming soon!')">
-      <svg viewBox="0 0 24 24"><path d="M9 19V6l12-2v13" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
-      Music Player
-    </button>
-    <button onclick="alert('Downloader coming soon!')">
-      <svg viewBox="0 0 24 24"><path d="M12 16l4-4h-3V4h-2v8H8l4 4z" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
-      Downloader
-    </button>
-    <button onclick="alert('AI Chat coming soon!')">
-      <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
-      AI Chat
-    </button>
-    <button onclick="alert('Study Hub coming soon!')">
-      <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
-      Study Hub
-    </button>
-    <button onclick="alert('Contact Zver Rion coming soon!')">
-      <svg viewBox="0 0 24 24"><path d="M2 3h20v18H2z" stroke="#320e2f" stroke-width="2" fill="none"/></svg>
-      Contact Zver Rion
-    </button>
+  <div class="content-wrapper">
+    <h1>ZVER RION - Anime & Gaming Wonderland</h1>
+    <p class="description">
+      THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE !
+    </p>
+    <div class="button-container">
+      <button onclick="alert('Mini Games coming soon!')">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#1477f8" stroke-width="2"/></svg>
+        Mini Games
+      </button>
+      <button onclick="alert('Fancy Text Generator coming soon!')">
+        <svg viewBox="0 0 24 24"><path fill="none" stroke="#1477f8" stroke-width="2" d="M4 12h16"/></svg>
+        Fancy Text Generator
+      </button>
+      <button onclick="alert('Anime Content coming soon!')">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1477f8" stroke-width="2" fill="none"/><path d="M7 7l10 10" stroke="#1477f8" stroke-width="2"/></svg>
+        Anime
+      </button>
+      <button onclick="alert('Music Player coming soon!')">
+        <svg viewBox="0 0 24 24"><path d="M9 19V6l12-2v13" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
+        Music Player
+      </button>
+      <button onclick="alert('Downloader coming soon!')">
+        <svg viewBox="0 0 24 24"><path d="M12 16l4-4h-3V4h-2v8H8l4 4z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
+        Downloader
+      </button>
+      <button onclick="alert('AI Chat coming soon!')">
+        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
+        AI Chat
+      </button>
+      <button onclick="alert('Study Hub coming soon!')">
+        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
+        Study Hub
+      </button>
+      <button onclick="alert('Contact Zver Rion coming soon!')">
+        <svg viewBox="0 0 24 24"><path d="M2 3h20v18H2z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
+        Contact Zver Rion
+      </button>
+    </div>
   </div>
-
   <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
 </body>
 </html>
