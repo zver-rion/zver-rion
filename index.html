@@ -1,141 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ZVER RION - Anime & Gaming Wonderland</title>
-  <meta name="description" content="THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE!">
+  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
-
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: 'Sawarabi Mincho', serif;
+      background: linear-gradient(120deg, #2a225a 60%, #0d071e 100%);
+      color: #eee;
+    }
+    .navbar {
+      background: rgba(31,23,54,0.98);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      font-size: 1.04rem;
+      font-weight: 600;
+    }
+    .navbar .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #abeaff;
+      letter-spacing: 1.5px;
+    }
+    .navbar .nav-links {
+      display: flex;
+      gap: 28px;
+    }
+    .navbar .nav-links a {
+      color: #d9d9ff;
+      text-decoration: none;
+      transition: color 0.18s;
+    }
+    .navbar .nav-links a:hover { color: #f7bfff; }
+    .navbar .user-area {
+      color: #bd7bfc;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero {
+      padding: 56px 0 36px 0;
       background-image: url('background3;2.jpeg');
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
+      background-repeat: no-repeat;
+      box-shadow: 0 16px 80px #6240b2;
       text-align: center;
-      color: #eaf4ff;
-      overflow-x: hidden;
+    }
+    .hero h1 {
+      font-size: 2.9rem;
+      color: #eeeaff;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      text-shadow: 0 0 30px #8153ff, 0 0 20px #03efe9;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbe0ff;
+      margin-bottom: 16px;
+      text-shadow: 0 0 8px #7adcfc;
+    }
+    .hero .hero-btn {
+      background: linear-gradient(90deg, #07e7fc, #9042ff);
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 14px 36px;
+      box-shadow: 0 0 16px #8140ff, 0 0 20px #03efe9;
+      transition: transform 0.18s, box-shadow 0.3s;
+      cursor: pointer;
+      margin-top: 18px;
+    }
+    .hero .hero-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 32px #a27cff, 0 0 28px #20ffc2;
     }
 
-    h1 {
-      margin-top: 50px;
-      font-size: 2.6rem;
-      color: #00d9ff;
-      text-shadow: 0 0 25px #00d9ff, 0 0 40px #0282f4;
-      letter-spacing: 3px;
+    .game-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+      margin: 45px auto 0 auto;
+      max-width: 1180px;
     }
-
-    p.description {
-      font-size: 1rem;
-      color: #bfeaff;
-      text-shadow: 0 0 10px #00e1ff;
-      margin-bottom: 50px;
-    }
-
-    .button-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 20px;
+    .game-col {
+      background: linear-gradient(150deg, #281636b0 90%, #6450dece 100%);
+      border-radius: 18px;
+      width: 172px;
+      min-height: 148px;
+      display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 700px;
-      margin-bottom: 100px;
-    }
-
-    .neon-button {
+      box-shadow: 0 0 25px #903ffa55;
       position: relative;
-      display: inline-block;
-      padding: 10px 22px;
-      font-size: 0.9rem;
-      color: #eaf8ff;
-      background: transparent;
-      border: 2px solid #00d9ff;
-      border-radius: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      text-shadow: 0 0 8px #00d9ff;
-      box-shadow: 0 0 10px #00d9ff66, inset 0 0 8px #00d9ff33;
-      transition: all 0.3s ease-in-out;
       overflow: hidden;
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s, transform 0.18s;
     }
-
-    .neon-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(120deg, transparent, #00ffe155, transparent);
-      transition: all 0.4s ease;
+    /* For background images in each column: */
+    .game-col[data-bg] {
+      background-image: var(--col-bg);
+      background-size: cover;
+      background-position: center;
     }
-
-    .neon-button:hover::before {
-      left: 100%;
+    .game-col:hover {
+      box-shadow: 0 0 35px #03efe9bb, 0 0 9px #b82aff;
+      transform: translateY(-5px) scale(1.06);
     }
-
-    .neon-button:hover {
-      background: rgba(0, 255, 255, 0.08);
-      box-shadow: 0 0 25px #00eaff, inset 0 0 10px #00d9ff;
-      border-color: #4ef4ff;
-      transform: scale(1.12);
+    .neon-btn {
+      padding: 7px 17px;
+      font-size: 0.97rem;
+      color: #fff;
+      background: linear-gradient(90deg, #07e7fc, #9042ff) !important;
+      border: none;
+      border-radius: 14px;
+      text-shadow: 0 0 8px #00eaff;
+      box-shadow: 0 0 13px #08fdff88;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.16s, box-shadow 0.2s, transform 0.18s;
     }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      background: rgba(0, 10, 20, 0.4);
-      color: #7feaff;
-      font-size: 0.9rem;
-      padding: 8px 0;
-      text-shadow: 0 0 6px #00d9ff;
-      box-shadow: 0 -2px 15px #00d9ff55;
-      backdrop-filter: blur(5px);
+    .neon-btn:hover, .neon-btn:focus {
+      background: linear-gradient(100deg, #9042ff 50%, #07e7fc 100%) !important;
+      box-shadow: 0 0 23px #713ffc;
+      transform: scale(1.11);
     }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 1.5rem; margin-top: 30px; }
-      .neon-button { padding: 8px 14px; font-size: 0.8rem; border-width: 1.5px; }
-      .button-container { gap: 15px; max-width: 85%; }
+    .section-title {
+      font-size: 1.55rem;
+      color: #a4c8ff;
+      text-align: left;
+      letter-spacing: 1.2px;
+      margin: 38px 0 6px 11vw;
+    }
+    footer{
+      position:fixed;bottom:0;width:100%;text-align:center;background:rgba(36,12,60,.45);
+      color:#7feaff;font-size:.97rem;padding:8px 0;text-shadow:0 0 8px #00d9ff;backdrop-filter:blur(5px);
+      box-shadow:0 -2px 13px #403fff60;
+    }
+    @media (max-width: 700px) {
+      .navbar { flex-direction: column; gap: 12px; }
+      .game-row { gap: 18px; }
+      .game-col { width: 98vw; min-width: 130px; min-height: 110px;}
+      .section-title {margin-left:4vw;font-size:1.2rem;}
     }
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">ZVER RION</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Store</a>
+      <a href="#">Blog</a>
+      <a href="#">Features</a>
+    </div>
+    <div class="user-area">
+      <span>Kuroky</span>
+      <img src="https://img.icons8.com/ios-filled/32/ffffff/user.png" alt="user" style="width:26px;height:26px;">
+    </div>
+  </nav>
+  <section class="hero">
+    <h1>DIABLO III: REAPER OF SOULS</h1>
+    <p>"One of the best grind games"</p>
+    <button class="hero-btn">Purchase</button>
+  </section>
 
-  <h1>ZVER RION - Anime & Gaming Wonderland</h1>
-  <p class="description">THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE!</p>
-
-  <div class="button-container">
-    <button class="neon-button" onclick="playSound(); alert('Mini Games coming soon!')">Mini Games</button>
-    <button class="neon-button" onclick="playSound(); alert('Text Generator coming soon!')">Text Generator</button>
-    <button class="neon-button" onclick="playSound(); alert('Anime Content coming soon!')">Anime</button>
-    <button class="neon-button" onclick="playSound(); alert('Music Player coming soon!')">Music</button>
-    <button class="neon-button" onclick="playSound(); alert('Downloader coming soon!')">Downloader</button>
-    <button class="neon-button" onclick="playSound(); alert('AI Chat coming soon!')">AI Chat</button>
-    <button class="neon-button" onclick="playSound(); alert('Study Hub coming soon!')">Study Hub</button>
-    <button class="neon-button" onclick="playSound(); alert('Contact Zver Rion coming soon!')">Contact</button>
+  <div class="section-title">Specials</div>
+  <div class="game-row">
+    <div class="game-col">
+      <button class="neon-btn">Mini Games</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">Anime</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">Music</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">Downloader</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">AI Chat</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">Study Hub</button>
+    </div>
+    <div class="game-col">
+      <button class="neon-btn">Contact</button>
+    </div>
   </div>
 
   <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
-
-  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
-  <script>
-    function playSound() {
-      const audio = document.getElementById('click-sound');
-      audio.currentTime = 0;
-      audio.play();
-    }
-  </script>
 </body>
 </html>
