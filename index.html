@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZVER RION - Anime & Gaming Wonderland</title>
-  <meta name="description" content="THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE !" />
+  <meta name="description" content="THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE!">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap');
 
@@ -13,190 +13,129 @@
       min-height: 100vh;
       font-family: 'Sawarabi Mincho', serif;
       background-image: url('background3;2.jpeg');
-      background-position: center;
-      background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
       background-attachment: fixed;
-      color: #eff6ff;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      padding: 0;
-      position: relative;
-      z-index: 1;
+      text-align: center;
+      color: #eaf4ff;
+      overflow-x: hidden;
     }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(40,60,110, 0.22);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .content-wrapper {
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 38px 12px 90px 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-      position: relative;
-    }
+
     h1 {
+      margin-top: 50px;
       font-size: 2.6rem;
-      text-align: center;
-      font-weight: bold;
-      margin: 27px 0 5px 0;
-      color: #49b5ff;
-      letter-spacing: 0.12em;
-      text-shadow: 0 4px 33px #2196F388, 0 2px 10px #fff, 0 0px 3px #bae0ff;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.10);
-      display: inline-block;
-      padding: 13px 18px 15px 18px;
-      width: 100%;
-      max-width: 900px;
-      box-shadow: 0 4px 24px #b3e5fcaa;
+      color: #00d9ff;
+      text-shadow: 0 0 25px #00d9ff, 0 0 40px #0282f4;
+      letter-spacing: 3px;
     }
-    .description {
-      text-align: center;
-      margin: 0 0 32px 0;
-      font-size: 1.08rem;
-      color: #edf3fa;
-      font-weight: 500;
-      max-width: 510px;
-      background: rgba(34,74,126,0.11);
-      border-radius: 13px;
-      padding: 7px 20px 11px 20px;
-      text-shadow: 0 1px 4px #bae0ff;
-      box-shadow: 0 2px 12px #4fd2ff22;
+
+    p.description {
+      font-size: 1rem;
+      color: #bfeaff;
+      text-shadow: 0 0 10px #00e1ff;
+      margin-bottom: 50px;
     }
+
     .button-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 16px 20px;
-      width: 100%;
-      max-width: 640px;
-      margin: 0 auto 40px auto;
-      padding: 0 8px;
-    }
-    button {
-      background: linear-gradient(135deg, #4fd2ff 60%, #49b5ff 100%);
-      border: none;
-      border-radius: 16px;
-      padding: 12px 8px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #174272;
-      cursor: pointer;
-      box-shadow: 0 2px 10px #3fd7fff2;
-      transition: all 0.2s cubic-bezier(.6,.6,0,1);
-      display: flex;
-      align-items: center;
+      gap: 20px;
       justify-content: center;
-      gap: 7px;
-      user-select: none;
-      outline: none;
+      align-items: center;
+      max-width: 700px;
+      margin-bottom: 100px;
     }
-    button:hover, button:focus {
-      background: linear-gradient(135deg, #277fff 60%, #66e0ff 100%);
-      box-shadow: 0 6px 25px #49b5ff90;
-      color: #09335f;
-      transform: translateY(-2px) scale(1.08);
+
+    .neon-button {
+      position: relative;
+      display: inline-block;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      color: #eaf8ff;
+      background: transparent;
+      border: 2px solid #00d9ff;
+      border-radius: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      text-shadow: 0 0 8px #00d9ff;
+      box-shadow: 0 0 10px #00d9ff66, inset 0 0 8px #00d9ff33;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
     }
-    button svg {
-      width: 18px;
-      height: 18px;
-      fill: #1477f8;
-      margin-right: 5px;
-      filter: drop-shadow(0 0 3px #bee4ff);
-      transition: fill 0.18s;
+
+    .neon-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, #00ffe155, transparent);
+      transition: all 0.4s ease;
     }
-    button:hover svg, button:focus svg {
-      fill: #0059b2;
+
+    .neon-button:hover::before {
+      left: 100%;
     }
-    @media (max-width: 600px) {
-      .content-wrapper {
-        padding: 13px 2vw 72px 2vw;
-      }
-      h1 {
-        font-size: 1.22rem;
-        padding: 9px 6vw 8px 6vw;
-        margin: 9px 0 4px 0;
-      }
-      .button-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 13px;
-        max-width: 95vw;
-        padding: 0 2vw;
-      }
-      .description {
-        font-size: 0.99rem;
-        padding: 5px 6vw 7px 6vw;
-      }
+
+    .neon-button:hover {
+      background: rgba(0, 255, 255, 0.08);
+      box-shadow: 0 0 25px #00eaff, inset 0 0 10px #00d9ff;
+      border-color: #4ef4ff;
+      transform: scale(1.12);
     }
+
     footer {
       position: fixed;
-      left: 0;
       bottom: 0;
-      width: 100vw;
+      width: 100%;
       text-align: center;
-      font-size: 0.97rem;
-      color: #beeeff;
-      background: rgba(40,60,110, 0.15);
-      padding: 10px 0;
-      letter-spacing: 0.05em;
-      z-index: 2;
-      box-shadow: 0 0px 12px #fff5;
-      font-family: 'Sawarabi Mincho', serif;
-      backdrop-filter: blur(2.5px);
+      background: rgba(0, 10, 20, 0.4);
+      color: #7feaff;
+      font-size: 0.9rem;
+      padding: 8px 0;
+      text-shadow: 0 0 6px #00d9ff;
+      box-shadow: 0 -2px 15px #00d9ff55;
+      backdrop-filter: blur(5px);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; margin-top: 30px; }
+      .neon-button { padding: 8px 14px; font-size: 0.8rem; border-width: 1.5px; }
+      .button-container { gap: 15px; max-width: 85%; }
     }
   </style>
 </head>
 <body>
-  <div class="overlay"></div>
-  <div class="content-wrapper">
-    <h1>ZVER RION - Anime & Gaming Wonderland</h1>
-    <p class="description">
-      THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE !
-    </p>
-    <div class="button-container">
-      <button onclick="alert('Mini Games coming soon!')">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8" stroke="#1477f8" stroke-width="2"/></svg>
-        Mini Games
-      </button>
-      <button onclick="alert('Fancy Text Generator coming soon!')">
-        <svg viewBox="0 0 24 24"><path fill="none" stroke="#1477f8" stroke-width="2" d="M4 12h16"/></svg>
-        Fancy Text Generator
-      </button>
-      <button onclick="alert('Anime Content coming soon!')">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#1477f8" stroke-width="2" fill="none"/><path d="M7 7l10 10" stroke="#1477f8" stroke-width="2"/></svg>
-        Anime
-      </button>
-      <button onclick="alert('Music Player coming soon!')">
-        <svg viewBox="0 0 24 24"><path d="M9 19V6l12-2v13" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
-        Music Player
-      </button>
-      <button onclick="alert('Downloader coming soon!')">
-        <svg viewBox="0 0 24 24"><path d="M12 16l4-4h-3V4h-2v8H8l4 4z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
-        Downloader
-      </button>
-      <button onclick="alert('AI Chat coming soon!')">
-        <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
-        AI Chat
-      </button>
-      <button onclick="alert('Study Hub coming soon!')">
-        <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
-        Study Hub
-      </button>
-      <button onclick="alert('Contact Zver Rion coming soon!')">
-        <svg viewBox="0 0 24 24"><path d="M2 3h20v18H2z" stroke="#1477f8" stroke-width="2" fill="none"/></svg>
-        Contact Zver Rion
-      </button>
-    </div>
+
+  <h1>ZVER RION - Anime & Gaming Wonderland</h1>
+  <p class="description">THROUGH HEAVEN AND EARTH; I ALONE I'M THE HONOURED ONE!</p>
+
+  <div class="button-container">
+    <button class="neon-button" onclick="playSound(); alert('Mini Games coming soon!')">Mini Games</button>
+    <button class="neon-button" onclick="playSound(); alert('Text Generator coming soon!')">Text Generator</button>
+    <button class="neon-button" onclick="playSound(); alert('Anime Content coming soon!')">Anime</button>
+    <button class="neon-button" onclick="playSound(); alert('Music Player coming soon!')">Music</button>
+    <button class="neon-button" onclick="playSound(); alert('Downloader coming soon!')">Downloader</button>
+    <button class="neon-button" onclick="playSound(); alert('AI Chat coming soon!')">AI Chat</button>
+    <button class="neon-button" onclick="playSound(); alert('Study Hub coming soon!')">Study Hub</button>
+    <button class="neon-button" onclick="playSound(); alert('Contact Zver Rion coming soon!')">Contact</button>
   </div>
+
   <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
+
+  <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+  <script>
+    function playSound() {
+      const audio = document.getElementById('click-sound');
+      audio.currentTime = 0;
+      audio.play();
+    }
+  </script>
 </body>
 </html>
