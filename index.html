@@ -3,387 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZVER ™ - Anime & Gaming Wonderland</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet" />
+  <title>ZVER ™ Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Sawarabi Mincho', serif;
-      background: linear-gradient(120deg, #2a225a 60%, #0d071e 100%);
-      color: #eee;
+      font-family: 'Montserrat', 'Sawarabi Mincho', serif;
+      background: linear-gradient(120deg, #b0bfff 0%, #3b3770 100%);
+      min-height: 100vh;
+      color: #f2f3fc;
     }
-    .navbar {
-      background: rgba(31,23,54,0.98);
-      color: #fff;
+    .main-panel {
+      max-width: 1300px;
+      margin: 50px auto 40px auto;
+      background: rgba(44,54,100, 0.83);
+      border-radius: 35px;
+      box-shadow: 0 2px 32px #38317388;
+      position: relative;
+      padding: 20px 30px 40px 30px;
+    }
+    .header-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 28px;
-      font-size: 1.04rem;
-      font-weight: 600;
+      background: rgba(41,48,92,0.98);
+      border-radius: 24px 24px 0 0;
+      padding: 18px 34px;
+      box-shadow: 0 4px 16px #322c5890;
+      font-size: 1.22rem;
+      margin-bottom: 18px;
     }
-    .navbar .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #abeaff;
-      letter-spacing: 1.5px;
-    }
-    .navbar .nav-links {
-      display: flex;
-      gap: 28px;
-    }
-    .navbar .nav-links a {
-      color: #d9d9ff;
-      text-decoration: none;
-      transition: color 0.18s;
-    }
-    .navbar .nav-links a:hover {
-      color: #f7bfff;
-    }
-    .navbar .user-area {
-      color: #bd7bfc;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .hero {
-      padding: 56px 0 36px 0;
-      box-shadow: 0 16px 80px #6240b2;
-      text-align: center;
-      background-image: url('background3;2.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .hero h1 {
-      font-size: 2.9rem;
-      color: #eeeaff;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 16px;
-      text-shadow: 0 0 30px #8153ff, 0 0 20px #03efe9;
-    }
-    .hero p {
-      font-size: 1.15rem;
-      color: #cbe0ff;
-      margin-bottom: 16px;
-      text-shadow: 0 0 8px #7adcfc;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero .hero-btn {
-      background: linear-gradient(90deg, #07e7fc 30%, #9042ff 80%);
-      color: #fff;
-      border: none;
-      border-radius: 24px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      padding: 14px 36px;
-      box-shadow: 0 0 16px #8140ff, 0 0 20px #03efe9;
-      transition: transform 0.18s, box-shadow 0.3s;
-      cursor: pointer;
-      margin-top: 18px;
-    }
-    .hero .hero-btn:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 32px #a27cff, 0 0 28px #20ffc2;
-    }
-    .section-title {
+    .dash-logo {
       font-size: 1.55rem;
-      color: #a4c8ff;
-      text-align: left;
-      letter-spacing: 1.2px;
-      margin: 38px 0 6px 11vw;
+      font-weight: 900;
+      letter-spacing: 2px;
+      color: #b3cef6;
     }
-    .registered-users-section {
-      background: rgba(45,19,85, 0.65);
-      border-radius: 30px;
-      margin: 0 auto 30px auto;
-      width: 93%;
-      padding: 32px;
-      color: #c6d5f9;
-    }
-    .registered-users-header {
+    .dash-nav {
       display: flex;
-      justify-content: space-between;
+      gap: 30px;
       align-items: center;
-      font-weight: bold;
-      font-size: 1.32rem;
-      padding-bottom: 12px;
-      border-bottom: 2px solid #5661ff54;
-      margin-bottom: 24px;
+      color: #b3cef6;
     }
-    .registered-user-list {
+    .nav-icon {font-size:1.18rem;}
+    .user-box {
       display: flex;
-      flex-direction: column;
-      gap: 24px;
+      gap: 12px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 1.02rem;
+      color: #c8a6f6;
     }
-    .user-card {
-      display: flex;
-      justify-content: space-between;
-      gap: 9px;
-      padding: 10px 16px;
-      background: rgba(44, 31, 82, 0.85);
+    .user-box img {width:29px;height:29px;border-radius:99px;}
+    .top-section {
+      display: grid;
+      grid-template-columns: 1.1fr 1.8fr 1.1fr;
+      gap: 28px;
+      margin-bottom: 22px;
+    }
+    .frosted-card {
+      background: rgba(56, 71, 121, 0.33);
+      border-radius: 19px;
+      box-shadow: 0 4px 25px #6558a4b0;
+      padding: 26px 32px;
+      backdrop-filter: blur(12px);
+    }
+    .frosted-card img {max-width:100%;border-radius:16px;}
+    .desc-main-title {font-size:1.5rem;font-weight:700;margin-bottom:11px;letter-spacing:1.5px;}
+    .desc-main-text {font-size:1.05rem;color:#bbd2fc;line-height:1.67;}
+    .login-box {display:block;}
+    .login-title {font-size:1.3rem;font-weight:700;letter-spacing:1px;margin-bottom:18px;}
+    .login-form label {display:block;color:#b3cef6;margin:8px 0 3px 0;}
+    .login-form input[type=email], .login-form input[type=password] {
+      width:97%;padding:9px 15px;border-radius:16px;border:none;
+      background:rgba(160,170,230,0.20);margin-bottom:12px;font-size:1.03rem;color:#fff;
+    }
+    .login-form input[type=checkbox] {margin-right:3px;}
+    .login-form .login-row {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom:10px;
+    }
+    .login-form .button-group {display:flex;gap:16px;margin-top:18px;}
+    .login-form button {
+      padding:10px 38px;
+      font-size:1.05rem;
+      border-radius:16px;
+      font-weight:700;
+      background: linear-gradient(90deg, #635bff 30%, #00fcfa 100%);
+      color:#fff; border:none; box-shadow:0 0 16px #622cff98;
+      cursor: pointer; transition: transform 0.16s, box-shadow 0.22s;
+    }
+    .login-form button:hover {background: linear-gradient(80deg,#00fcfa 40%,#635bff 100%); box-shadow:0 0 30px #822cfc66; transform:scale(1.10);}
+    .registered-panel {
+      background: rgba(56, 71, 121, 0.33);
       border-radius: 18px;
-      box-shadow: 0 0 14px #3d00ffaa;
-      align-items: center;
-      flex-wrap: wrap;
+      box-shadow: 0 2px 17px #6558a4b0;
+      padding: 24px 18px 14px 18px;
+      backdrop-filter: blur(10px);
+      margin-bottom:18px;
     }
-    .user-info {
-      display: flex;
-      gap: 14px;
-      flex: 1 1 auto;
-      flex-wrap: wrap;
+    .reg-title {font-size:1.22rem;font-weight:700;margin-bottom:14px;color:#b3cef6;}
+    .profile-list {border-radius:9px;overflow:hidden;}
+    .profile-row {
+      display:flex;align-items:center;gap:24px;background:rgba(55,47,85,0.65);
+      padding:13px 14px;border-bottom:1.5px solid #342d4f33;
+      font-size:0.98rem;
     }
-    .user-info div {
-      flex-basis: 22%;
-      min-width: 130px;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      font-size: 0.89rem;
+    .profile-row:last-child {border-bottom:none;}
+    .profile-pic img {width:38px;height:38px;border-radius:12px;}
+    .profile-data {display:flex;gap:30px;align-items:center;flex:1;}
+    .profile-data .label {color:#75bedb;font-size:0.83rem;}
+    .profile-actions {display:flex;gap:15px;}
+    .profile-action {
+      background:linear-gradient(98deg,#635fff 60%,#00fcfa 100%);
+      border:none;color:#fff;padding:7px 22px;border-radius:16px;font-weight:600;
+      box-shadow:0 0 13px #6558a490;cursor:pointer;transition:box-shadow 0.16s,transform 0.13s;
     }
-    .user-info div span:first-child {
-      color: #7a80b7;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
+    .profile-action:hover {box-shadow:0 0 18px #176cffcc;transform:scale(1.09);}
+    .button-grid-panel {
+      background: rgba(56, 71, 121, 0.33);
+      border-radius: 18px;
+      box-shadow: 0 2px 17px #6558a4b0;
+      padding: 32px 16px 38px 16px;
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:22px;
+      margin-top:12px;backdrop-filter:blur(10px);
+      justify-items:center;
     }
-    .user-name {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 2px solid #5a5ab6;
-      box-shadow: 0 0 12px #0008;
+    .feature-btn {
+      background: linear-gradient(97deg,#635fff 40%,#00fcfa 100%);
+      color:#fff;font-weight:700;border-radius:18px;padding:18px 0;width:120px;
+      border:none;box-shadow:0 0 16px #4e37bc88;font-size:1.08rem;
+      cursor:pointer;transition:transform 0.17s,box-shadow 0.17s;
+      text-align:center;letter-spacing:1px;
     }
-    .user-name img {
-      width: 48px;
-      height: 48px;
-      object-fit: cover;
-    }
-    .user-actions {
-      display: flex;
-      gap: 16px;
-      margin-left: auto;
-    }
-    .btn-profile, .btn-addfriend, .btn-compare {
-      padding: 6px 20px;
-      border-radius: 22px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      color: #a9c6fc;
-      background: transparent;
-      box-shadow: inset 0 0 8px #7186ff;
-      transition: all 0.26s ease;
-    }
-    .btn-profile:hover, .btn-addfriend:hover, .btn-compare:hover {
-      box-shadow: inset 0 0 16px #85a6ff;
-      color: #fff;
-    }
-    .btn-addfriend, .btn-compare  {
-      background: linear-gradient(90deg, #5963f1, #9363f5);
-      color: #ecebfc;
-      box-shadow: 0 0 16px #a76cff;
-    }
-    .btn-addfriend:hover, .btn-compare:hover {
-      background: linear-gradient(90deg, #9267ff, #aa5aea);
-      box-shadow: 0 0 26px #aa80ff;
-    }
-    .game-buttons {
-      background: rgba(45,19,85, 0.65);
-      border-radius: 30px;
-      margin: 0 auto 40px auto;
-      padding: 35px 25px 40px 25px;
-      width: 93%;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    .game-button {
-      background: linear-gradient(90deg, #07e7fc 30%, #9042ff 80%);
-      color: #fff;
-      font-weight: 700;
-      border: none;
-      border-radius: 28px;
-      padding: 10px 28px;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow: 0 0 20px #6634e8;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .game-button:hover {
-      box-shadow: 0 0 36px #9052ff, 0 0 46px #22d8ff;
-      transform: scale(1.12);
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      background: rgba(36, 12, 60, 0.45);
-      color: #7feaff;
-      font-size: 0.97rem;
-      padding: 8px 0;
-      text-shadow: 0 0 8px #00d9ff;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 -2px 13px #403fff60;
-    }
-
-    @media (max-width: 700px) {
-      .navbar {
-        flex-direction: column;
-        gap: 12px;
-      }
-      .user-info div {
-        flex-basis: 100%;
-      }
-      .user-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .game-buttons {
-        padding: 25px 10px 28px 10px;
-      }
-      .game-button {
-        width: 100%;
-        padding: 15px 0;
-      }
-      .section-title {
-        margin-left: 4vw;
-        font-size: 1.2rem;
-      }
+    .feature-btn:hover {box-shadow:0 0 29px #635fffcc;transform:scale(1.13);}
+    @media(max-width:1000px){
+      .main-panel{margin:10px auto 25px auto;padding:12px 5vw;}
+      .top-section{grid-template-columns:1fr;}
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">ZVER ™</div>
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">Store</a>
-      <a href="#">Blog</a>
-      <a href="#">Features</a>
+  <div class="main-panel">
+    <!-- Header bar -->
+    <div class="header-bar">
+      <span class="dash-logo">ZVER ™</span>
+      <div class="dash-nav">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-icon">🎮</span>
+        <span class="nav-icon">📰</span>
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-icon">🔔</span>
+      </div>
+      <div class="user-box">
+        <span>Kuroky</span>
+        <img src="https://img.icons8.com/ios-filled/32/ffffff/user.png" alt="user" />
+      </div>
     </div>
-    <div class="user-area">
-      <span>Kuroky</span>
-      <img src="https://img.icons8.com/ios-filled/32/ffffff/user.png" alt="user" style="width:26px;height:26px;">
-    </div>
-  </nav>
-
-  <section class="hero">
-    <h1>ANIME GALAXY</h1>
-    <p>Welcome to the best anime and gaming portal! Explore new adventures and meet fellow fans.</p>
-    <button class="hero-btn">ENTER</button>
-  </section>
-
-  <div class="section-title">Registered Users (1019)</div>
-
-  <section class="registered-users-section">
-    <div class="registered-user-list">
-
-      <div class="user-card">
-        <div class="user-info">
-          <div>
-            <span>Name</span>
-            Johan Sundstein
+    <!-- Top glassmorphism grid -->
+    <section class="top-section">
+      <div class="frosted-card">
+        <div class="desc-main-title">Welcome to ZVER ™</div>
+        <div class="desc-main-text">This website is your anime and gaming portal! Explore, chat, find friends, play, share, and learn across all your favorite worlds. Connect with fellow fans, discover features, and shape your own galaxy of fun.</div>
+      </div>
+      <div class="frosted-card">
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?fit=crop&w=900&q=80" alt="Banner" />
+      </div>
+      <div class="frosted-card login-box">
+        <div class="login-title">Sign In / Sign Up</div>
+        <form class="login-form">
+          <label for="email">Email Address</label>
+          <input type="email" placeholder="Enter your email" id="email" />
+          <label for="password">Password</label>
+          <input type="password" placeholder="Enter your password" id="password" />
+          <div class="login-row">
+            <label><input type="checkbox" /> Keep me logged in</label>
+            <span style="font-size:0.96rem;color:#bbedff;cursor:pointer;">Forgot password?</span>
           </div>
-          <div>
-            <span>Birthday</span>
-            January 6, 1994
+          <div class="button-group">
+            <button type="submit">Sign In</button>
+            <button type="button">Sign Up</button>
           </div>
-          <div>
-            <span>Birth Date</span>
-            January 6, 1994
+        </form>
+      </div>
+    </section>
+    <!-- Registered Users glass card -->
+    <div class="registered-panel">
+      <div class="reg-title">Registered Users (1019)</div>
+      <div class="profile-list">
+        <div class="profile-row">
+          <div class="profile-pic"><img src="https://randomuser.me/api/portraits/men/67.jpg" /></div>
+          <div class="profile-data">
+            <div><span class="label">Name</span> Johan Sundstein</div>
+            <div><span class="label">Birthday</span> January 6, 1994</div>
+            <div><span class="label">Birth Date</span> January 6, 1994</div>
+            <div><span class="label">Country</span> Denmark</div>
           </div>
-          <div>
-            <span>Country</span>
-            Denmark
+          <div class="profile-actions">
+            <button class="profile-action">Profile</button>
+            <button class="profile-action">Add Friend</button>
+            <button class="profile-action">Compare</button>
           </div>
         </div>
-        <div class="user-actions">
-          <button class="btn-profile">Profile</button>
-          <button class="btn-addfriend">Add Friend</button>
-          <button class="btn-compare">Compare</button>
+        <div class="profile-row">
+          <div class="profile-pic"><img src="https://randomuser.me/api/portraits/men/22.jpg" /></div>
+          <div class="profile-data">
+            <div><span class="label">Name</span> Daniil Teslenko</div>
+            <div><span class="label">Birthday</span> March 16, 1996</div>
+            <div><span class="label">Birth Date</span> March 16, 1996</div>
+            <div><span class="label">Country</span> Russia</div>
+          </div>
+          <div class="profile-actions">
+            <button class="profile-action">Profile</button>
+            <button class="profile-action">Add Friend</button>
+            <button class="profile-action">Compare</button>
+          </div>
         </div>
       </div>
-
-      <div class="user-card">
-        <div class="user-info">
-          <div>
-            <span>Name</span>
-            Daniil Teslenko
-          </div>
-          <div>
-            <span>Birthday</span>
-            March 16, 1996
-          </div>
-          <div>
-            <span>Birth Date</span>
-            March 16, 1996
-          </div>
-          <div>
-            <span>Country</span>
-            Russia
-          </div>
-        </div>
-        <div class="user-actions">
-          <button class="btn-profile">Profile</button>
-          <button class="btn-addfriend">Add Friend</button>
-          <button class="btn-compare">Compare</button>
-        </div>
-      </div>
-
-      <div class="user-card">
-        <div class="user-info">
-          <div>
-            <span>Name</span>
-            Alexei Berezin
-          </div>
-          <div>
-            <span>Birthday</span>
-            December 3, 1993
-          </div>
-          <div>
-            <span>Birth Date</span>
-            December 3, 1993
-          </div>
-          <div>
-            <span>Country</span>
-            Estonia
-          </div>
-        </div>
-        <div class="user-actions">
-          <button class="btn-profile">Profile</button>
-          <button class="btn-addfriend">Add Friend</button>
-          <button class="btn-compare">Compare</button>
-        </div>
-      </div>
-
     </div>
-  </section>
-
-  <section class="game-buttons">
-    <button class="game-button">PROFILE</button>
-    <button class="game-button">FRIENDS</button>
-    <button class="game-button">GAMES</button>
-    <button class="game-button">AI</button>
-    <button class="game-button">ANIME</button>
-    <button class="game-button">STUDY</button>
-    <button class="game-button">FUN CORNER</button>
-    <button class="game-button">MUSIC</button>
-    <button class="game-button">DOWNLOADER</button>
-    <button class="game-button">FANCY</button>
-  </section>
-
-  <footer>© 2025 Zver-Rion Space. All rights reserved.</footer>
+    <!-- Button grid in same glass style -->
+    <div class="button-grid-panel">
+      <button class="feature-btn">PROFILE</button>
+      <button class="feature-btn">FRIENDS</button>
+      <button class="feature-btn">GAMES</button>
+      <button class="feature-btn">AI</button>
+      <button class="feature-btn">ANIME</button>
+      <button class="feature-btn">STUDY</button>
+      <button class="feature-btn">FUN CORNER</button>
+      <button class="feature-btn">MUSIC</button>
+      <button class="feature-btn">DOWNLOADER</button>
+      <button class="feature-btn">FANCY</button>
+    </div>
+  </div>
 </body>
 </html>
+
